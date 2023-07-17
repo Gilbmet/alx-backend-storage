@@ -30,7 +30,8 @@ def log_stats(mongo_collection, option=None):
             log_stats(mongo_collection, method)
         except Exception as e:
             print(f"Error fetching method {method}: {e}")
-    status_check = mongo_collection.count_documents({"method": "GET", "path": "/status"})
+    status_check = mongo_collection.count_documents(
+        {"method": "GET", "path": "/status"})
     print(f"{status_check} status check")
 
 
